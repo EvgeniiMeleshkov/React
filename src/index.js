@@ -18,8 +18,6 @@ import {BrowserRouter} from "react-router-dom";
         </BrowserRouter>, document.getElementById('root'))
 };
 
-
-
  rerenderEntireTree(store.getState());
  store.subscribe(rerenderEntireTree);
 
