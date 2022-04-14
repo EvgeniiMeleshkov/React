@@ -8,18 +8,17 @@ import Settings from './components/Navbar/Navbar'
 import Profile from './components/Profile/Profile'
 import Dialogs from "./components/Dialogs/Dialogs";
 import {Route, Routes} from "react-router-dom";
-import {addMessage, addPost} from "./state";
+
 
 
 const App = (props) => {
-
 
     /*  let arr = props.dialogs.map(a => <Dialogs id = {a.id} name={a.name}/>)*/
 
     return (
         <div className='app-wrapper'>
             <Header/>
-            <Navbar state={props.state.sidebarPage}/>
+            <Navbar state={props.state}/>
 
             <div className='app-wrapper-content'>
                 <Routes>
@@ -28,12 +27,13 @@ const App = (props) => {
 
                                state={props.state.dialogsPage}
                                newMessageText={props.state.dialogsPage.newMessageText}
-                               addMessage={addMessage}
+                               addMessage={props.addMessage}
                                updateNewMessageText={props.updateNewMessageText}/>}/>
                     <Route path='/profile'
                            element={<Profile
+                               state={props.state.profilePage}
                                profilePage={props.state.profilePage}
-                               addPost={addPost}
+                               addPost={props.addPost}
                                updateNewPostText={props.updateNewPostText}/>}/>
                     <Route path='/news'
                            element={<News/>}/>
