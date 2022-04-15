@@ -24,17 +24,13 @@ const App = (props) => {
                 <Routes>
                     <Route path='/dialogs/*'
                            element={<Dialogs
-
-                               state={props.state.dialogsPage}
-                               newMessageText={props.state.dialogsPage.newMessageText}
-                               addMessage={props.addMessage}
-                               updateNewMessageText={props.updateNewMessageText}/>}/>
+                               dialogsPage={props.state.dialogsPage}
+                               dispatch={props.dispatch}
+                               newMessageText={props.state.dialogsPage.newMessageBody}/>}/>
                     <Route path='/profile'
                            element={<Profile
-                               state={props.state.profilePage}
                                profilePage={props.state.profilePage}
-                               addPost={props.addPost}
-                               updateNewPostText={props.updateNewPostText}/>}/>
+                               dispatch={props.dispatch}/>}/>
                     <Route path='/news'
                            element={<News/>}/>
                     <Route path='/music'

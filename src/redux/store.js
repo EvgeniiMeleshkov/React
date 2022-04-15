@@ -1,3 +1,8 @@
+import profileReducer from "./profileReducer";
+import dialogsReducer from "./dialogsReducer";
+import sidebarReducer from "./sidebarReducer";
+
+
 let store = {
 
     _state: {
@@ -18,7 +23,7 @@ let store = {
                 {id: 5, message: '22 4 1 5 5 11 23 3'},
                 {id: 6, message: '2 IOUH  hh  ihu  ouh H OH jjJJ'},
             ],
-            newMessageText: "Its new message!",
+            newMessageBody: "",
             dialogs: [
                 {id: 1, name: 'Dimych'},
                 {id: 2, name: 'Andrew'},
@@ -41,46 +46,25 @@ let store = {
         console.log('State changed');
     },
 
-    getState () {
+    getState() {
         return this._state
     },
 
-    addPost() {
 
-        let newPost = {
-            id: 5,
-            message: this._state.profilePage.newPostText,
-            likesCount: 0
-        };
-        this._state.profilePage.posts.push(newPost);
-        this._state.profilePage.newPostText = '';
-        this._callSubscriber(this._state);
-    },
-
-    updateNewPostText(newText) {
-        this._state.profilePage.newPostText = newText;
-        this._callSubscriber(this._state);
-    },
-    addMessage() {
-        let newMessage = {
-            id: 7,
-            message: this._state.dialogsPage.newMessageText,
-        };
-        this._state.dialogsPage.messages.push(newMessage);
-        this._state.dialogsPage.newMessageText = '';
-        this._callSubscriber(this._state);
-    },
-
-    updateNewMessageText(newText) {
-        this._state.dialogsPage.newMessageText = newText;
-        this._callSubscriber(this._state);
-    },
-
-    subscribe (observer) {
+    subscribe(observer) {
         this._callSubscriber = observer
-    }
+    },
 
-}
+    dispatch(action) {
+        this._state.profilePage = profileReducer(this._state.profilePage, action);
+        this._state.dialogsPage = dialogsReducer(this._state.dialogsPage, action);
+        this._state.sidebarPage = sidebarReducer(this._state.sidebarPage, action);
+        this._callSubscriber(this._state);
+    }
+};
+
+
+
 
 export default store;
 window.store = store;
