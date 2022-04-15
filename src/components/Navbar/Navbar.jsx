@@ -1,13 +1,13 @@
 import React from "react";
 import s from './Navbar.module.css'
 import {NavLink} from "react-router-dom";
-import Sidebar from "./Sitebar/Sidebar";
+import SidebarContainer from "./Sidebar/SidebarContainer";
 
 
 
 
 
-const Navbar = (props) => {
+const Navbar = () => {
 
     const st = () => {
         return (
@@ -34,7 +34,7 @@ const Navbar = (props) => {
                     <NavLink to='settings'>Settings</NavLink>
                 </div>
                 <div className={s.item}>
-                    <Sidebar state={props.state.sidebarPage}/>
+                    <SidebarContainer />
                 </div>
             </div>
         </nav>
