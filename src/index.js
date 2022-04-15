@@ -3,6 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import {BrowserRouter} from "react-router-dom";
+import StoreContext, {Provider} from "./StoreContext";
 
 
 
@@ -10,16 +11,15 @@ import {BrowserRouter} from "react-router-dom";
 
     ReactDOM.render(
         <BrowserRouter>
-            <App state={state}
-                 dispatch={store.dispatch.bind(store)}
-            />
+            <Provider store={store}>
+            <App />
+            </Provider>
         </BrowserRouter>, document.getElementById('root'))
 };
 
- rerenderEntireTree(store.getState());
+ rerenderEntireTree();
  store.subscribe(() => {
-     let state = store.getState()
-     rerenderEntireTree(state)
+     rerenderEntireTree()
  });
 
 

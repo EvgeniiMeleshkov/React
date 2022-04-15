@@ -8,13 +8,13 @@ const MyPosts = (props) => {
     let postsElements = props.posts.map(p => <Post postMessage={p.message} likesCount={p.likesCount}/>)
 
 
-    let addPost = () => {
-        props.dispatch(addPostCreater());
+    let onAddPost = () => {
+        props.addPost();
     };
 
     let onPostChange = (e) => {
         let text = e.target.value;
-        props.dispatch(updateNewPostTextCreater(text));
+        props.updateNewPostText(text)
     };
 
     return (
@@ -27,7 +27,7 @@ const MyPosts = (props) => {
                                   value={props.newPostText}/>
                     </div>
                     <div>
-                        <button onClick={addPost}>Add post</button>
+                        <button onClick={onAddPost}>Add post</button>
                     </div>
                 </div>
             </div>
