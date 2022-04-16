@@ -3,7 +3,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import {BrowserRouter} from "react-router-dom";
-import StoreContext, {Provider} from "./StoreContext";
+import {Provider} from "react-redux";
+
 
 
 
@@ -17,9 +18,10 @@ import StoreContext, {Provider} from "./StoreContext";
         </BrowserRouter>, document.getElementById('root'))
 };
 
- rerenderEntireTree();
+ rerenderEntireTree(store.getState());
  store.subscribe(() => {
-     rerenderEntireTree()
+     let state = store.getState()
+     rerenderEntireTree(state)
  });
 
 
