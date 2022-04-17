@@ -5,7 +5,7 @@ import Friend from "./Friend/Friend";
 
 const Sidebar = (props) => {
 
-    let mappedSidebar = props.sidebar.map(m => <Friend name = {m.name} id = {m.id} />)
+    let mappedSidebar = props.sidebar.map(m => <Friend name={m.name} key={m.id} id={m.id} />)
 
 
 
