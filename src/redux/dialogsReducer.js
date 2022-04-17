@@ -1,3 +1,5 @@
+import message from "../components/Dialogs/Message/Message";
+
 const SEND_MESSAGE = 'SEND-MESSAGE';
 const UPDATE_NEW_MESSAGE_BODY = 'UPDATE-NEW-MESSAGE-BODY';
 
@@ -23,28 +25,26 @@ let initialState = {
 }
 
 const dialogsReducer = (state = initialState, action) => {
-
-    let stateCopy = {
-        ...state
-    };
-
     switch (action.type) {
-        case SEND_MESSAGE:
+        case SEND_MESSAGE: {
             let bodyMessage = {
                 id: 7,
                 message: state.newMessageBody
             };
-            stateCopy.messages = [...state.messages];
-            stateCopy.messages.push(bodyMessage);
-            stateCopy.newMessageBody = {...state.newMessageBody}
-            stateCopy.newMessageBody = "";
-            return stateCopy;
-        case UPDATE_NEW_MESSAGE_BODY:
-            stateCopy.newMessageBody = action.bodyMessage;
-            return stateCopy;
-
+            return {
+                ...state,
+                messages: [...state.messages, bodyMessage],
+                newMessageBody: ''
+            };
+        }
+        case UPDATE_NEW_MESSAGE_BODY: {
+            return {
+                ...state,
+                newMessageBody: action.bodyMessage
+            };
+        }
         default:
-            return stateCopy;
+            return state;
     }
 }
 
