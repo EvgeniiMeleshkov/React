@@ -25,13 +25,16 @@ const Navbar = () => {
                     <NavLink to='/dialogs' className={st()}>Messages</NavLink>
                 </div>
                 <div className={s.item}>
-                    <NavLink to='/news'>News</NavLink>
+                    <NavLink to='/users' className={st()}>Users</NavLink>
                 </div>
                 <div className={s.item}>
-                    <NavLink to='music'>Music</NavLink>
+                    <NavLink to='/news' className={st()}>News</NavLink>
                 </div>
                 <div className={s.item}>
-                    <NavLink to='settings'>Settings</NavLink>
+                    <NavLink to='music' className={st()}>Music</NavLink>
+                </div>
+                <div className={s.item}>
+                    <NavLink to='settings' className={st()}>Settings</NavLink>
                 </div>
                 <div className={s.item}>
                     <SidebarContainer />
