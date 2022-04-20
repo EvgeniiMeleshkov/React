@@ -3,6 +3,30 @@ import {sendMessageCreator, updateNewMessageBodyCreator} from "../../redux/dialo
 import Dialogs from "./Dialogs";
 import {connect} from "react-redux";
 
+class DialogsContainer extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
+    onSendMessageClick = () => {
+        this.props.SendMessage()
+    };
+    onNewMessageChange = (e) => {
+        let body = e.target.value;
+        this.props.updateNewMessageBody(body)
+    };
+
+    render() {
+        return (
+            <Dialogs
+                dialogsPage={this.props.dialogsPage}
+                onNewMessageChange={this.onNewMessageChange}
+                onSendMessageClick={this.onSendMessageClick}
+            />
+        )
+    }
+}
+
 
 let mapStateToProps = (state) => {
     return {
@@ -20,6 +44,4 @@ let mapDispatchToProps = (dispatch) => {
     }
 };
 
-const DialogsContainer = connect(mapStateToProps, mapDispatchToProps)(Dialogs);
-
-export default DialogsContainer
+export default connect(mapStateToProps, mapDispatchToProps)(DialogsContainer);

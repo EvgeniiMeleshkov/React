@@ -3,10 +3,8 @@ import s from './Sitebar.module.css'
 import Friend from "./Friend/Friend";
 
 
-class Sidebar extends React.Component {
+const Sidebar = (props) => {
 
-render ()
-    {
         return (
             <div className={s.siteBar}>
                 <div>
@@ -17,12 +15,12 @@ render ()
                                  src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdCAx8Z3BkRc6lDaGZs7_Q-sSwcyl-2ObqEg&usqp=CAU'/>
                         </div>
                         <div className={s.div}>
-                            {this.props.sidebar.map(m => <Friend name={m.name} key={m.id} id={m.id} />)}
+                            {props.sidebar.map(m => <Friend name={m.name} key={m.id} id={m.id} />)}
                         </div>
                     </div>
                 </div>
             </div>
         )
     }
-}
+
 export default Sidebar
