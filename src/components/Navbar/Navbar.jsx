@@ -3,12 +3,7 @@ import s from './Navbar.module.css'
 import {NavLink} from "react-router-dom";
 import SidebarContainer from "./Sidebar/SidebarContainer";
 
-
-
-
-
 const Navbar = () => {
-
     return (
         <nav className={s.nav}>
             <div>
