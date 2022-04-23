@@ -5,16 +5,15 @@ import Navbar from './components/Navbar/Navbar'
 import News from './components/Navbar/Navbar'
 import Music from './components/Navbar/Navbar'
 import Settings from './components/Navbar/Navbar'
-import Profile from './components/Profile/Profile'
-import {Route, Routes} from "react-router-dom";
+import {Route} from "react-router-dom";
 import DialogsContainer from "./components/Dialogs/DialogsContainer";
 import UsersContainer from "./components/Users/UsersContainer";
+import ProfileContainer from "./components/Profile/ProfileContainer";
 
 
 
 
 const App = () => {
-    /*  let arr = props.dialogs.map(a => <Dialogs id = {a.id} name={a.name}/>)*/
 
     return (
         <div className='app-wrapper'>
@@ -22,20 +21,18 @@ const App = () => {
             <Navbar />
 
             <div className='app-wrapper-content'>
-                <Routes>
-                    <Route path='/dialogs/*'
-                           element={<DialogsContainer />}/>
-                    <Route path='/profile'
-                           element={<Profile />}/>
+                    <Route path='/dialogs'
+                           render={ () => <DialogsContainer />}/>
+                    <Route path='/profile/:userId?'
+                           render={ () => <ProfileContainer />}/>
                     <Route path='/news'
-                           element={<News/>}/>
+                           render={ () => <News/>}/>
                     <Route path='/music'
-                           element={<Music/>}/>
+                           render={ () => <Music/>}/>
                     <Route path='/settings'
-                           element={<Settings/>}/>
+                           render={ () => <Settings/>}/>
                     <Route path='/users'
-                           element={<UsersContainer />}/>
-                </Routes>
+                           render={ () => <UsersContainer />}/>
             </div>
         </div>
     )
