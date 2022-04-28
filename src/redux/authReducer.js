@@ -1,4 +1,5 @@
 import axios from "axios";
+import {authAPI} from "../api/api";
 
 const SET_USER_DATA = 'SET_USER_DATA';
 
@@ -22,6 +23,17 @@ const authReducer = (state = initialState, action) => {
             }
         default:
             return state
+    }
+}
+
+export const authThunkCreator = () => {
+    return (dispatch) => {
+        authAPI.authentication().then(data => {
+            let {id, email, login} = data.data;
+            if (data.resultCode === 0) {
+                dispatch(setAuthUserData(id, email, login))
+            }
+        })
     }
 }
 
