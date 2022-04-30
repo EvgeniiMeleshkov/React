@@ -10,6 +10,7 @@ let Users = (props) => {
     for (let i = 1; i <= pagesCount; i++) {
         pages.push(i);
     }
+
     pages.length = 3
     if (props.currentPage === 1) {
         pages[1] = props.currentPage + 1

@@ -1,5 +1,5 @@
 import React from "react"
-import {addPostCreator, updateNewPostTextCreator} from "../../../redux/profileReducer";
+import {addPostCreator} from "../../../redux/profileReducer";
 import MyPosts from "./MyPosts";
 import {connect} from "react-redux";
 
@@ -10,22 +10,16 @@ class MyPostsContainer extends React.Component {
         super(props);
     }
 
-    onAddPost = () => {
-        this.props.addPost();
-    };
-
-    onPostChange = (e) => {
-        let text = e.target.value;
-        this.props.updateNewPostText(text)
-    };
-
+    addNewPostText = (values) => {
+        this.props.addPost(values.newPostBody)
+    }
 
     render() {
         return (
-           <MyPosts onPostChange={this.onPostChange}
+           <MyPosts
                     newPostText={this.props.newPostText}
                     posts={this.props.posts}
-                    onAddPost={this.onAddPost}
+                    addNewPostText={this.addNewPostText}
            />
         )
     }
@@ -34,17 +28,13 @@ class MyPostsContainer extends React.Component {
 const mapStateToProps = (state) => {
     return {
         posts: state.profilePage.posts,
-        newPostText: state.profilePage.newPostText
     }
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        updateNewPostText: (text) => {
-            dispatch(updateNewPostTextCreator(text));
-        },
-        addPost: () => {
-            dispatch(addPostCreator());
+        addPost: (newPostBody) => {
+            dispatch(addPostCreator(newPostBody));
         }
     }
 };
