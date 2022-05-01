@@ -2,7 +2,7 @@
     text-align: center;
     margin-top: 25px;
     background-color: cornsilk ;
-    border-radius: 100px;
+    border-radius: 10px;
     margin-left: 400px;
     width: max-content;
     height: max-content;
@@ -13,10 +13,14 @@
     margin-top: 25px;
     background-color: darkslategrey ;
     text-align: center;
-    border-radius: 100px;
+    border-radius: 10px;
     width: max-content;
     height: max-content;
     padding: 5px;
     color: cornsilk;
+}
+.message {
+    max-width: 300px;
+    text-overline-mode: auto;
 }
 

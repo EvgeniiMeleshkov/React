@@ -21,6 +21,10 @@
     color: beige;
 }
 
+.message {
+    max-width: 100px;
+}
+
 .textArea {
 
 }
