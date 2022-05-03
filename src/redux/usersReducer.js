@@ -80,28 +80,14 @@ export const toggleIsFetching = (isFetching) => ({type: TOGGLE_IS_FETCHING, isFe
 export const toggleFollowingProgress = (isFetching, userID) => ({type: TOGGLE_IS_FOLLOWING_PROGRESS, isFetching, userID});
 
 
-export const getUsersThunkCreator = (currentPage, pageSize) => {
+export const getUsersThunkCreator = (page, pageSize) => {
 
     return (dispatch) => {
-
-        dispatch(toggleIsFetching(true))
-
-        usersAPI.getUsers(currentPage, pageSize).then(data => {
-
+        dispatch(toggleIsFetching(true));
+        dispatch(setCurrentPage(page))
+        usersAPI.getUsers(page, pageSize).then(data => {
             dispatch(setUsers(data.items))
             dispatch(setTotalUsersCount(data.totalCount))
-            dispatch(toggleIsFetching(false))
-        })
-    }
-}
-
-export const pageUsersChangedThunkCreator = (pageNumber, pageSize) => {
-    return (dispatch) => {
-        dispatch(toggleIsFetching(true))
-        dispatch(setCurrentPage(pageNumber))
-
-        usersAPI.getUsers(pageNumber, pageSize).then(data => {
-            dispatch(setUsers(data.items))
             dispatch(toggleIsFetching(false))
         })
     }
@@ -131,8 +117,6 @@ export const unFollow = (userID) => {
         })
     }
 }
-
-
 
 
 

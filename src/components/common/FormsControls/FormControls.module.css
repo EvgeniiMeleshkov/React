@@ -10,3 +10,10 @@
 {
    color: darkred;
 }
+
+.formSummaryError {
+    border: darkred 1px solid;
+    padding: 5px;
+    color: darkred;
+    max-width: max-content;
+}
