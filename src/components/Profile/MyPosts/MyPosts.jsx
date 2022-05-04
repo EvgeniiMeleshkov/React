@@ -25,7 +25,7 @@ const MyPostsForm = (props) => {
     )
 }
 
-const MyPosts = (props) => {
+const MyPosts = React.memo(props => {
     return (
         <div className={s.postsBlock}>
             <h3>My posts</h3>
@@ -40,7 +40,7 @@ const MyPosts = (props) => {
             </div>
         </div>
     )
-}
+})
 
 const MyReduxFormPost = reduxForm({
     form: 'profileAddPostForm'
