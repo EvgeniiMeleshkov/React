@@ -26,6 +26,16 @@ const MyPostsForm = (props) => {
 }
 
 const MyPosts = React.memo(props => {
+    let del = props.delete
+    let mappedPosts = props.posts
+        .map((p) => <Post
+            id={p.id}
+            delete={del}
+            postMessage={p.message}
+            key={p.id}
+            likesCount={p.likesCount}
+
+        />)
     return (
         <div className={s.postsBlock}>
             <h3>My posts</h3>
@@ -33,10 +43,7 @@ const MyPosts = React.memo(props => {
                 <MyReduxFormPost onSubmit={props.addNewPostText}/>
             </div>
             <div className={s.posts}>
-                {props.posts
-                    .map(p => <Post postMessage={p.message}
-                                    key={p.id}
-                                    likesCount={p.likesCount}/>)}
+                {mappedPosts}
             </div>
         </div>
     )

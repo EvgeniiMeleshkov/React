@@ -4,6 +4,7 @@ const ProfileStatusWithHooks = (props) => {
 
     let [editMode, setEditMode] = useState(false)
     let [status, setStatus] = useState(props.status)
+
     useEffect( () => {
         setStatus(props.status)
     }, [props.status])

@@ -1,6 +1,12 @@
 import React from "react"
 import Profile from "./Profile";
-import {getStatus, profileMatchThunkCreator, setUserProfile, updateStatus} from "../../redux/profileReducer";
+import {
+    deletePost,
+    getStatus,
+    profileMatchThunkCreator,
+    setUserProfile,
+    updateStatus
+} from "../../redux/profileReducer";
 import {connect} from "react-redux";
 import {Redirect, withRouter} from "react-router-dom";
 import {compose} from "redux";
@@ -42,7 +48,8 @@ let mapStateToProps = (state) => ({
     profile: state.profilePage.profile,
     status: state.profilePage.status,
     isAuth: state.auth.isAuth,
-    authorisedUserId: state.auth.userId
+    authorisedUserId: state.auth.userId,
+    postId: state.profilePage.posts.id
 })
 
 export default compose(
@@ -51,7 +58,8 @@ export default compose(
             setUserProfile,
             profileMatchThunkCreator,
             getStatus,
-            updateStatus
+            updateStatus,
+            deletePost
         }),
     withRouter,
     //withAuthRedirect

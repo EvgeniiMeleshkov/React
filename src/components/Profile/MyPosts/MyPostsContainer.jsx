@@ -1,5 +1,5 @@
 import React from "react"
-import {addPostCreator} from "../../../redux/profileReducer";
+import {addPostCreator, deletePost} from "../../../redux/profileReducer";
 import MyPosts from "./MyPosts";
 import {connect} from "react-redux";
 
@@ -20,6 +20,7 @@ class MyPostsContainer extends React.Component {
                     newPostText={this.props.newPostText}
                     posts={this.props.posts}
                     addNewPostText={this.addNewPostText}
+                    delete={this.props.delete}
            />
         )
     }
@@ -35,6 +36,9 @@ const mapDispatchToProps = (dispatch) => {
     return {
         addPost: (newPostBody) => {
             dispatch(addPostCreator(newPostBody));
+        },
+        delete: (postId) => {
+            dispatch(deletePost(postId))
         }
     }
 };
