@@ -98,7 +98,6 @@ export const follow = (userID) => {
         dispatch(toggleFollowingProgress(true, userID))
         usersAPI.onUserFollow(userID).then(resultCode => {
             if (resultCode === 0) {
-
                 dispatch(followSuccess(userID))
             }
             dispatch(toggleFollowingProgress(false, userID))
