@@ -41,9 +41,7 @@ const profileReducer = (state = initialState, action) => {
         }
         case ADD_NEW_LIKE: {
             return {...state, posts: state.posts.filter(p =>
-                    p.id === action.postId
-                    ? p.likesCount = p.likesCount + 1
-                    : p.likesCount )}
+                    p.id === action.postId ? p.likesCount = p.likesCount + 1 : p)}
         }
         default:
             return state
