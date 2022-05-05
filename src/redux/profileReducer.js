@@ -3,7 +3,9 @@ import {profileAPI} from "../api/api";
 const ADD_POST = 'ADD-POST';
 const SET_USER_PROFILE = 'SET_USER_PROFILE';
 const SET_STATUS = 'SET_STATUS';
-const DELETE_POST = 'DELETE_POST'
+const DELETE_POST = 'DELETE_POST';
+const ADD_NEW_LIKE = 'ADD_NEW_LIKE';
+
 
 let initialState = {
     posts: [
@@ -19,7 +21,7 @@ const profileReducer = (state = initialState, action) => {
     switch (action.type) {
         case ADD_POST: {
             let newPost = {
-                id: 3,
+                id: state.posts.length + 1,
                 message: action.newPostBody,
                 likesCount: 0
             };
@@ -37,6 +39,12 @@ const profileReducer = (state = initialState, action) => {
         case DELETE_POST: {
             return {...state, posts: state.posts.filter(p => p.id !== action.postId)}
         }
+        case ADD_NEW_LIKE: {
+            return {...state, posts: state.posts.filter(p =>
+                    p.id === action.postId
+                    ? p.likesCount = p.likesCount + 1
+                    : p.likesCount )}
+        }
         default:
             return state
     }
@@ -46,6 +54,7 @@ export const addPostCreator = (newPostBody) => ({type: ADD_POST, newPostBody});
 export const setUserProfile = (profile) => ({type: SET_USER_PROFILE, profile});
 export const setStatus = (status) => ({type: SET_STATUS, status});
 export const deletePost = (postId) => ({type: DELETE_POST, postId});
+export const addNewLike = (postId) => ({type: ADD_NEW_LIKE, postId});
 
 
 export const profileMatchThunkCreator = (userId) => {

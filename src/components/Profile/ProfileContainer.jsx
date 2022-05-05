@@ -1,6 +1,7 @@
 import React from "react"
 import Profile from "./Profile";
 import {
+    addNewLike,
     deletePost,
     getStatus,
     profileMatchThunkCreator,
@@ -49,7 +50,6 @@ let mapStateToProps = (state) => ({
     status: state.profilePage.status,
     isAuth: state.auth.isAuth,
     authorisedUserId: state.auth.userId,
-    postId: state.profilePage.posts.id
 })
 
 export default compose(
@@ -59,7 +59,8 @@ export default compose(
             profileMatchThunkCreator,
             getStatus,
             updateStatus,
-            deletePost
+            deletePost,
+            addNewLike
         }),
     withRouter,
     //withAuthRedirect

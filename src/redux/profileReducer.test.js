@@ -1,4 +1,4 @@
-import profileReducer, {addPostCreator, deletePost} from "./profileReducer";
+import profileReducer, {addNewLike, addPostCreator, deletePost} from "./profileReducer";
 
 
 let state = {
@@ -35,4 +35,20 @@ test('after deleting length should decrement', () => {
     let newState = profileReducer(state, action)
     // 3. expectation
     expect (newState.posts.length).toBe(1)
+})
+test('after adding new post, id should increment', () => {
+    //1. start test data
+    let action = addPostCreator('Some message')
+    //2. action
+    let newState = profileReducer(state, action)
+    //3. expectation
+    expect(newState.posts[2].id).toBe(3)
+})
+test('likesCount increment', () => {
+    //1. start test data
+    let action = addNewLike(1)
+    //2. action
+    let newState = profileReducer(state, action)
+    //3. expectation
+    expect(newState.posts[0].likesCount).toBe(13)
 })

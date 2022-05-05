@@ -26,9 +26,11 @@ const MyPostsForm = (props) => {
 }
 
 const MyPosts = React.memo(props => {
-    let del = props.delete
+    const like = props.like
+    const del = props.delete
     let mappedPosts = props.posts
         .map((p) => <Post
+            like={like}
             id={p.id}
             delete={del}
             postMessage={p.message}

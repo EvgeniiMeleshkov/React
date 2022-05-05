@@ -8,13 +8,16 @@ const Post = (props) => {
     let deletePost = () => {
         props.delete(props.id)
     }
+    let likePost = () => {
+        props.like(props.id)
+    }
     return (
             <div className={s.item}>
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjEWTaMjIzoQeuBAsIeOia_1Wi4mCJrKX_YQ&usqp=CAU" />
                 { props.postMessage }
                 <div>
                     <div>
-                        <button>Like</button>
+                        <button onClick={likePost}>Like</button>
                     </div>
                     <div>{ props.likesCount }</div>
                     <div>
