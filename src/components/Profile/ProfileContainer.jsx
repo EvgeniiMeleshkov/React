@@ -1,7 +1,7 @@
 import React from "react"
 import Profile from "./Profile";
 import {
-    addNewLike,
+    addNewLike, changeLookingForJob,
     deletePost,
     getStatus,
     profileMatchThunkCreator,
@@ -39,6 +39,8 @@ class ProfileContainer extends React.Component {
                          profile={this.props.profile}
                          status={this.props.status}
                          updateStatus={this.props.updateStatus}
+                         areLookingForJob={this.props.areLookingForJob}
+                         changeLookingForJob={this.props.changeLookingForJob}
                 />
             </div>
         )
@@ -46,6 +48,7 @@ class ProfileContainer extends React.Component {
 }
 
 let mapStateToProps = (state) => ({
+    areLookingForJob: state.profilePage.areLookingForJob,
     profile: state.profilePage.profile,
     status: state.profilePage.status,
     isAuth: state.auth.isAuth,
@@ -60,7 +63,8 @@ export default compose(
             getStatus,
             updateStatus,
             deletePost,
-            addNewLike
+            addNewLike,
+            changeLookingForJob
         }),
     withRouter,
     //withAuthRedirect

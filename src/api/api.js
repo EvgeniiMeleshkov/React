@@ -55,6 +55,26 @@ export const profileAPI = {
     },
     updateStatus(status) {
         return instance.put(`profile/status`, {status: status})
+    },
+    setJob(areLookingForJob) {
+
+        return instance.put(`profile`, {
+            "aboutMe": "Just a good boy",
+                "contacts": {
+                facebook: "facebook.com",
+                    github: "github.com",
+                    instagram: "instagra.com/sds",
+                    mainLink: null,
+                    twitter: "https://twitter.com/@sdf",
+                    vk: "vk.com/",
+                    website: null,
+                    youtube: null
+            },
+            "lookingForAJob": areLookingForJob,
+                "lookingForAJobDescription": 'Anyway, yes!',
+                "fullName": "John MJ"
+        })
+
     }
 
 }

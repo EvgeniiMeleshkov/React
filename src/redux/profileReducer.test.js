@@ -1,4 +1,4 @@
-import profileReducer, {addNewLike, addPostCreator, deletePost} from "./profileReducer";
+import profileReducer, {addNewLike, addPostCreator, deletePost, toggleJob} from "./profileReducer";
 
 
 let state = {
@@ -51,4 +51,12 @@ test('likesCount increment', () => {
     let newState = profileReducer(state, action)
     //3. expectation
     expect(newState.posts[0].likesCount).toBe(13)
+})
+test('Is looking for job', () => {
+    //1. start test data
+    let action = toggleJob(true)
+    //2. action
+    let newState = profileReducer(state, action)
+    //3. expectation
+    expect(newState.areLookingForJob).toBe(true)
 })
