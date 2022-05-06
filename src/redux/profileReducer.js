@@ -55,27 +55,18 @@ export const deletePost = (postId) => ({type: DELETE_POST, postId});
 export const addNewLike = (postId) => ({type: ADD_NEW_LIKE, postId});
 
 
-export const profileMatchThunkCreator = (userId) => {
-    return (dispatch) => {
-        profileAPI.getProfile(userId).then(data => {
+export const profileMatchThunkCreator = (userId) => async (dispatch) => {
+        let data = await profileAPI.getProfile(userId);
             dispatch(setUserProfile(data))
-        })
-    }
 }
-export const getStatus = (userId) => {
-    return (dispatch) => {
-        profileAPI.getStatus(userId).then(response => {
+export const getStatus = (userId) => async (dispatch) => {
+        let response = await profileAPI.getStatus(userId);
             dispatch(setStatus(response.data))
-        })
-    }
 }
-export const updateStatus = (status) => {
-    return (dispatch) => {
-        profileAPI.updateStatus(status).then(response => {
+export const updateStatus = (status) => async (dispatch) => {
+        let response = await profileAPI.updateStatus(status);
             if(response.data.resultCode === 0)
             dispatch(setStatus(status))
-        })
-    }
 }
 
 
