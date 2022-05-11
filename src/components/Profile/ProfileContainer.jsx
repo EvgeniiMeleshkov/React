@@ -4,7 +4,7 @@ import {
     addNewLike, changeLookingForJob,
     deletePost,
     getStatus,
-    profileMatchThunkCreator,
+    profileMatchThunkCreator, savePhoto,
     setUserProfile,
     updateStatus
 } from "../../redux/profileReducer";
@@ -15,9 +15,7 @@ import {compose} from "redux";
 
 class ProfileContainer extends React.Component {
 
-
-    componentDidMount() {
-
+    refreshProfile() {
         let userId = this.props.match.params.userId
         if (!userId) {
             userId = this.props.authorisedUserId;
@@ -29,18 +27,30 @@ class ProfileContainer extends React.Component {
         this.props.getStatus(userId)
     }
 
+    componentDidMount() {
+        this.refreshProfile()
+    }
+
+    componentDidUpdate(prevProps: Readonly<P>, prevState: Readonly<S>, snapshot: SS) {
+        if (this.props.match.params.userId !== prevProps.match.params.userId) {
+            this.refreshProfile()
+        }
+    }
+
     render() {
-        if(!this.props.isAuth) {
-            return <Redirect to={'/login'} />
+        if (!this.props.isAuth) {
+            return <Redirect to={'/login'}/>
         }
         return (
             <div>
                 <Profile {...this.props}
+                         isOwner={!this.props.match.params.userId}
                          profile={this.props.profile}
                          status={this.props.status}
                          updateStatus={this.props.updateStatus}
                          areLookingForJob={this.props.areLookingForJob}
                          changeLookingForJob={this.props.changeLookingForJob}
+                         savePhoto={this.props.savePhoto}
                 />
             </div>
         )
@@ -64,7 +74,8 @@ export default compose(
             updateStatus,
             deletePost,
             addNewLike,
-            changeLookingForJob
+            changeLookingForJob,
+            savePhoto
         }),
     withRouter,
     //withAuthRedirect

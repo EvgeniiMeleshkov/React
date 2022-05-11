@@ -1,21 +1,22 @@
-import React from 'react'
+import React, {Suspense} from 'react'
 import './App.css'
-import Navbar from './components/Navbar/Navbar'
-import News from './components/Navbar/Navbar'
-import Music from './components/Navbar/Navbar'
-import Settings from './components/Navbar/Navbar'
-import {BrowserRouter, Route, withRouter} from "react-router-dom";
-import DialogsContainer from "./components/Dialogs/DialogsContainer";
-import UsersContainer from "./components/Users/UsersContainer";
-import ProfileContainer from "./components/Profile/ProfileContainer";
-import HeaderContainer from "./components/Header/HeaderContainer";
-import LoginPage from "./components/Login/Login";
+import {HashRouter, Route, withRouter} from "react-router-dom";
 import {connect, Provider} from "react-redux";
 import {compose} from "redux";
 import {initializeApp} from "./redux/appReducer";
 import Preloader from "./components/common/Preloader/Preloader";
 import store from "./redux/reduxStore";
 
+const DialogsContainer = React.lazy(() => import('./components/Dialogs/DialogsContainer'));
+const ProfileContainer = React.lazy(() => import('./components/Profile/ProfileContainer'));
+
+const Navbar = React.lazy(() => import('./components/Navbar/Navbar'));
+const News = React.lazy(() => import('./components/Navbar/Navbar'));
+const Music = React.lazy(() => import('./components/Navbar/Navbar'));
+const Settings = React.lazy(() => import('./components/Navbar/Navbar'));
+const UsersContainer = React.lazy(() => import('./components/Users/UsersContainer'));
+const HeaderContainer = React.lazy(() => import('./components/Header/HeaderContainer'));
+const LoginPage = React.lazy(() => import('./components/Login/Login'));
 
 class App extends React.Component {
 
@@ -24,15 +25,18 @@ class App extends React.Component {
     }
 
     render() {
+
         if (!this.props.initialized) {
             return <Preloader/>
         } else {
             return (
+                <Suspense fallback={<Preloader/>}>
                 <div className='app-wrapper'>
                     <HeaderContainer/>
                     <Navbar/>
 
                     <div className='app-wrapper-content'>
+
                         <Route path='/dialogs'
                                render={() => <DialogsContainer/>}/>
                         <Route path='/profile/:userId?'
@@ -49,6 +53,7 @@ class App extends React.Component {
                                render={() => <LoginPage/>}/>
                     </div>
                 </div>
+        </Suspense>
             )
         }
     }
@@ -64,11 +69,11 @@ let AppContainer = compose(
     connect(mapStateToProps, {initializeApp}))(App)
 
 const SamuraiJSApp = (props) => {
-    return <BrowserRouter>
+    return <HashRouter>}>
         <Provider store={store}>
-            <AppContainer />
+            <AppContainer/>
         </Provider>
-    </BrowserRouter>
+    </HashRouter>
 }
 
 export default SamuraiJSApp

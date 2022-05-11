@@ -1,4 +1,5 @@
 import {profileAPI} from "../api/api";
+import profile from "../components/Profile/Profile";
 
 const ADD_POST = 'ADD-POST';
 const SET_USER_PROFILE = 'SET_USER_PROFILE';
@@ -6,7 +7,7 @@ const SET_STATUS = 'SET_STATUS';
 const DELETE_POST = 'DELETE_POST';
 const ADD_NEW_LIKE = 'ADD_NEW_LIKE';
 const ARE_LOOKING_FOR_JOB = 'profileReducer/ARE_LOOKING_FOR_JOB';
-
+const SAVE_PHOTO_SUCCESS = 'profileReducer/SAVE_PHOTO_SUCCESS';
 
 let initialState = {
     posts: [
@@ -16,7 +17,7 @@ let initialState = {
 
     profile: null,
     status: 'Status',
-    areLookingForJob: true
+    areLookingForJob: {...profile.lookingForAJob}
 }
 
 const profileReducer = (state = initialState, action) => {
@@ -46,8 +47,10 @@ const profileReducer = (state = initialState, action) => {
                     p.id === action.postId ? p.likesCount = p.likesCount + 1 : p)}
         }
         case ARE_LOOKING_FOR_JOB: {
-
-            return {...state, areLookingForJob: action.areLookingForJob}
+            return {...state, profile: {...state.profile, lookingForAJob: !action.areLookingForJob}}
+        }
+        case SAVE_PHOTO_SUCCESS: {
+            return {...state, profile: {...state.profile, photos: action.photos}}
         }
         default:
             return state
@@ -60,6 +63,7 @@ export const setStatus = (status) => ({type: SET_STATUS, status});
 export const deletePost = (postId) => ({type: DELETE_POST, postId});
 export const addNewLike = (postId) => ({type: ADD_NEW_LIKE, postId});
 export const toggleJob = (areLookingForJob) => ({type: ARE_LOOKING_FOR_JOB, areLookingForJob});
+export const savePhotoSuccess = (photos) => ({type: SAVE_PHOTO_SUCCESS, photos});
 
 
 export const profileMatchThunkCreator = (userId) => async (dispatch) => {
@@ -70,6 +74,7 @@ export const changeLookingForJob = (areLookingForJob) => async (dispatch) => {
     let response = await profileAPI.setJob(areLookingForJob)
     if(response.data.resultCode === 0)
         dispatch(toggleJob(areLookingForJob))
+
 }
 export const getStatus = (userId) => async (dispatch) => {
         let response = await profileAPI.getStatus(userId);
@@ -77,8 +82,15 @@ export const getStatus = (userId) => async (dispatch) => {
 }
 export const updateStatus = (status) => async (dispatch) => {
         let response = await profileAPI.updateStatus(status);
-            if(response.data.resultCode === 0)
-            dispatch(setStatus(status))
+            if(response.data.resultCode === 0) {
+                dispatch(setStatus(status))
+            }
+}
+export const savePhoto = (file) => async (dispatch) => {
+        let response = await profileAPI.savePhoto(file);
+            if(response.data.resultCode === 0) {
+                dispatch(savePhotoSuccess(response.data.data.photos))
+            }
 }
 
 

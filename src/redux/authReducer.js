@@ -5,10 +5,10 @@ const SET_USER_DATA = 'auth/SET_USER_DATA';
 
 
 let initialState = {
-    userId: null,
-    email: null,
-    login: null,
-    isAuth: false
+    userId: 1079,
+    email: "free@samuraijs.com",
+    login: "free",
+    isAuth: true
 }
 
 
@@ -30,7 +30,7 @@ export const setAuthUserData = (userId, email, login, isAuth) => ({
 
 export const authThunkCreator = () =>
     async (dispatch) => {
-        let response = await authAPI.authentication();
+        let response = await authAPI.me();
         let {id, email, login} = response.data;
         if (response.resultCode === 0) {
             dispatch(setAuthUserData(id, email, login, true))
