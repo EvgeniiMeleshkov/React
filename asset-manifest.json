@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/React_lessons/static/css/main.c706cd3a.css",
-    "main.js": "/React_lessons/static/js/main.3e575fca.js",
+    "main.js": "/React_lessons/static/js/main.f74cf897.js",
     "static/css/165.09f5b322.chunk.css": "/React_lessons/static/css/165.09f5b322.chunk.css",
     "static/js/165.596e1974.chunk.js": "/React_lessons/static/js/165.596e1974.chunk.js",
     "static/js/489.6e4877e1.chunk.js": "/React_lessons/static/js/489.6e4877e1.chunk.js",
@@ -16,7 +16,7 @@
     "static/media/Spinner_preloader.gif": "/React_lessons/static/media/Spinner_preloader.0c2993480d0ca8008754.gif",
     "index.html": "/React_lessons/index.html",
     "main.c706cd3a.css.map": "/React_lessons/static/css/main.c706cd3a.css.map",
-    "main.3e575fca.js.map": "/React_lessons/static/js/main.3e575fca.js.map",
+    "main.f74cf897.js.map": "/React_lessons/static/js/main.f74cf897.js.map",
     "165.09f5b322.chunk.css.map": "/React_lessons/static/css/165.09f5b322.chunk.css.map",
     "165.596e1974.chunk.js.map": "/React_lessons/static/js/165.596e1974.chunk.js.map",
     "489.6e4877e1.chunk.js.map": "/React_lessons/static/js/489.6e4877e1.chunk.js.map",
@@ -30,6 +30,6 @@
   },
   "entrypoints": [
     "static/css/main.c706cd3a.css",
-    "static/js/main.3e575fca.js"
+    "static/js/main.f74cf897.js"
   ]
 }
