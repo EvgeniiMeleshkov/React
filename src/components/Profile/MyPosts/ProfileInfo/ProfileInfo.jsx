@@ -42,9 +42,11 @@ const ProfileInfo = React.memo((props) => {
                 <div>
                 <b onDoubleClick={changeJ}>{props.profile.lookingForAJob ? '🙋🏼‍♂️' : '🙅🏼‍♂️'}</b>
                 </div>
+                <div>
                 { props.profile.lookingForAJob &&
                     <div>{props.profile.lookingForAJobDescription}</div>
                 }
+                </div>
             </div>
         </div>
     )
