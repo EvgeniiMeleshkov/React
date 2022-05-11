@@ -5,10 +5,10 @@ const SET_USER_DATA = 'auth/SET_USER_DATA';
 
 
 let initialState = {
-    userId: 1079,
-    email: "free@samuraijs.com",
-    login: "free",
-    isAuth: true
+    userId: null,
+    email: null,
+    login: null,
+    isAuth: false
 }
 
 
