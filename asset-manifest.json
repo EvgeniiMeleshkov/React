@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/React_lessons/static/css/main.164ed30c.css",
-    "main.js": "/React_lessons/static/js/main.5956bba3.js",
+    "main.js": "/React_lessons/static/js/main.6f0f72e1.js",
     "static/css/165.1f22362d.chunk.css": "/React_lessons/static/css/165.1f22362d.chunk.css",
     "static/js/165.cd9b2773.chunk.js": "/React_lessons/static/js/165.cd9b2773.chunk.js",
     "static/css/463.3590a15d.chunk.css": "/React_lessons/static/css/463.3590a15d.chunk.css",
-    "static/js/463.3ad8c52a.chunk.js": "/React_lessons/static/js/463.3ad8c52a.chunk.js",
+    "static/js/463.817caf9b.chunk.js": "/React_lessons/static/js/463.817caf9b.chunk.js",
     "static/css/478.3c92ad83.chunk.css": "/React_lessons/static/css/478.3c92ad83.chunk.css",
     "static/js/478.b79f4aba.chunk.js": "/React_lessons/static/js/478.b79f4aba.chunk.js",
-    "static/css/10.caef300f.chunk.css": "/React_lessons/static/css/10.caef300f.chunk.css",
-    "static/js/10.3b542e8f.chunk.js": "/React_lessons/static/js/10.3b542e8f.chunk.js",
+    "static/css/634.a291468c.chunk.css": "/React_lessons/static/css/634.a291468c.chunk.css",
+    "static/js/634.b97c8fbe.chunk.js": "/React_lessons/static/js/634.b97c8fbe.chunk.js",
     "static/css/550.7eb92b1e.chunk.css": "/React_lessons/static/css/550.7eb92b1e.chunk.css",
     "static/js/550.876ca5ea.chunk.js": "/React_lessons/static/js/550.876ca5ea.chunk.js",
     "static/css/797.1819b218.chunk.css": "/React_lessons/static/css/797.1819b218.chunk.css",
@@ -19,15 +19,15 @@
     "static/media/Spinner_preloader.gif": "/React_lessons/static/media/Spinner_preloader.0c2993480d0ca8008754.gif",
     "index.html": "/React_lessons/index.html",
     "main.164ed30c.css.map": "/React_lessons/static/css/main.164ed30c.css.map",
-    "main.5956bba3.js.map": "/React_lessons/static/js/main.5956bba3.js.map",
+    "main.6f0f72e1.js.map": "/React_lessons/static/js/main.6f0f72e1.js.map",
     "165.1f22362d.chunk.css.map": "/React_lessons/static/css/165.1f22362d.chunk.css.map",
     "165.cd9b2773.chunk.js.map": "/React_lessons/static/js/165.cd9b2773.chunk.js.map",
     "463.3590a15d.chunk.css.map": "/React_lessons/static/css/463.3590a15d.chunk.css.map",
-    "463.3ad8c52a.chunk.js.map": "/React_lessons/static/js/463.3ad8c52a.chunk.js.map",
+    "463.817caf9b.chunk.js.map": "/React_lessons/static/js/463.817caf9b.chunk.js.map",
     "478.3c92ad83.chunk.css.map": "/React_lessons/static/css/478.3c92ad83.chunk.css.map",
     "478.b79f4aba.chunk.js.map": "/React_lessons/static/js/478.b79f4aba.chunk.js.map",
-    "10.caef300f.chunk.css.map": "/React_lessons/static/css/10.caef300f.chunk.css.map",
-    "10.3b542e8f.chunk.js.map": "/React_lessons/static/js/10.3b542e8f.chunk.js.map",
+    "634.a291468c.chunk.css.map": "/React_lessons/static/css/634.a291468c.chunk.css.map",
+    "634.b97c8fbe.chunk.js.map": "/React_lessons/static/js/634.b97c8fbe.chunk.js.map",
     "550.7eb92b1e.chunk.css.map": "/React_lessons/static/css/550.7eb92b1e.chunk.css.map",
     "550.876ca5ea.chunk.js.map": "/React_lessons/static/js/550.876ca5ea.chunk.js.map",
     "797.1819b218.chunk.css.map": "/React_lessons/static/css/797.1819b218.chunk.css.map",
@@ -36,6 +36,6 @@
   },
   "entrypoints": [
     "static/css/main.164ed30c.css",
-    "static/js/main.5956bba3.js"
+    "static/js/main.6f0f72e1.js"
   ]
 }
