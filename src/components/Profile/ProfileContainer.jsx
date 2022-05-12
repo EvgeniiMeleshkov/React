@@ -1,10 +1,10 @@
 import React from "react"
 import Profile from "./Profile";
 import {
-    addNewLike, changeLookingForJob,
+    addNewLike,
     deletePost,
     getStatus,
-    profileMatchThunkCreator, savePhoto,
+    getUserProfile, savePhoto, saveProfile,
     setUserProfile,
     updateStatus
 } from "../../redux/profileReducer";
@@ -48,8 +48,6 @@ class ProfileContainer extends React.Component {
                          profile={this.props.profile}
                          status={this.props.status}
                          updateStatus={this.props.updateStatus}
-                         areLookingForJob={this.props.areLookingForJob}
-                         changeLookingForJob={this.props.changeLookingForJob}
                          savePhoto={this.props.savePhoto}
                 />
             </div>
@@ -58,7 +56,6 @@ class ProfileContainer extends React.Component {
 }
 
 let mapStateToProps = (state) => ({
-    areLookingForJob: state.profilePage.areLookingForJob,
     profile: state.profilePage.profile,
     status: state.profilePage.status,
     isAuth: state.auth.isAuth,
@@ -69,13 +66,13 @@ export default compose(
     connect(mapStateToProps,
         {
             setUserProfile,
-            profileMatchThunkCreator,
+            profileMatchThunkCreator: getUserProfile,
             getStatus,
             updateStatus,
             deletePost,
             addNewLike,
-            changeLookingForJob,
-            savePhoto
+            savePhoto,
+            saveProfile
         }),
     withRouter,
     //withAuthRedirect

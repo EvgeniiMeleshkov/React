@@ -65,26 +65,8 @@ export const profileAPI = {
             }
         })
     },
-    setJob(areLookingForJob) {
-
-        return instance.put(`profile`, {
-            "aboutMe": "Just a good boy",
-                "contacts": {
-                facebook: "facebook.com",
-                    github: "github.com",
-                    instagram: "instagra.com/sds",
-                    mainLink: null,
-                    twitter: "https://twitter.com/@sdf",
-                    vk: "vk.com/",
-                    website: null,
-                    youtube: null
-            },
-            "lookingForAJob": !areLookingForJob,
-                "lookingForAJobDescription": 'Anyway, yes!',
-                "fullName": "John MJ"
-        })
-
+    saveProfile(profile) {
+        return instance.put(`profile`, profile)
     }
-
 }
 
