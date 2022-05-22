@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.css": "/React_lessons/static/css/main.164ed30c.css",
-    "main.js": "/React_lessons/static/js/main.5e45e030.js",
-    "static/css/165.1f22362d.chunk.css": "/React_lessons/static/css/165.1f22362d.chunk.css",
-    "static/js/165.82b33bee.chunk.js": "/React_lessons/static/js/165.82b33bee.chunk.js",
-    "static/css/763.3f310999.chunk.css": "/React_lessons/static/css/763.3f310999.chunk.css",
-    "static/js/763.34fbda77.chunk.js": "/React_lessons/static/js/763.34fbda77.chunk.js",
+    "main.css": "/React_lessons/static/css/main.1be76f0a.css",
+    "main.js": "/React_lessons/static/js/main.b1fe0c58.js",
+    "static/css/11.2076e202.chunk.css": "/React_lessons/static/css/11.2076e202.chunk.css",
+    "static/js/11.7b948271.chunk.js": "/React_lessons/static/js/11.7b948271.chunk.js",
+    "static/css/763.4b77dd98.chunk.css": "/React_lessons/static/css/763.4b77dd98.chunk.css",
+    "static/js/763.b195dced.chunk.js": "/React_lessons/static/js/763.b195dced.chunk.js",
     "static/css/478.3c92ad83.chunk.css": "/React_lessons/static/css/478.3c92ad83.chunk.css",
     "static/js/478.b79f4aba.chunk.js": "/React_lessons/static/js/478.b79f4aba.chunk.js",
     "static/css/634.a291468c.chunk.css": "/React_lessons/static/css/634.a291468c.chunk.css",
@@ -13,17 +13,17 @@
     "static/css/550.7eb92b1e.chunk.css": "/React_lessons/static/css/550.7eb92b1e.chunk.css",
     "static/js/550.5f8d4147.chunk.js": "/React_lessons/static/js/550.5f8d4147.chunk.js",
     "static/css/797.1819b218.chunk.css": "/React_lessons/static/css/797.1819b218.chunk.css",
-    "static/js/797.78ec5b53.chunk.js": "/React_lessons/static/js/797.78ec5b53.chunk.js",
+    "static/js/797.f9b9a869.chunk.js": "/React_lessons/static/js/797.f9b9a869.chunk.js",
     "static/js/615.2adaf889.chunk.js": "/React_lessons/static/js/615.2adaf889.chunk.js",
     "static/media/computer-user-icon-2.png": "/React_lessons/static/media/computer-user-icon-2.cac374d26bbc06a63e7f.png",
     "static/media/Spinner_preloader.gif": "/React_lessons/static/media/Spinner_preloader.0c2993480d0ca8008754.gif",
     "index.html": "/React_lessons/index.html",
-    "main.164ed30c.css.map": "/React_lessons/static/css/main.164ed30c.css.map",
-    "main.5e45e030.js.map": "/React_lessons/static/js/main.5e45e030.js.map",
-    "165.1f22362d.chunk.css.map": "/React_lessons/static/css/165.1f22362d.chunk.css.map",
-    "165.82b33bee.chunk.js.map": "/React_lessons/static/js/165.82b33bee.chunk.js.map",
-    "763.3f310999.chunk.css.map": "/React_lessons/static/css/763.3f310999.chunk.css.map",
-    "763.34fbda77.chunk.js.map": "/React_lessons/static/js/763.34fbda77.chunk.js.map",
+    "main.1be76f0a.css.map": "/React_lessons/static/css/main.1be76f0a.css.map",
+    "main.b1fe0c58.js.map": "/React_lessons/static/js/main.b1fe0c58.js.map",
+    "11.2076e202.chunk.css.map": "/React_lessons/static/css/11.2076e202.chunk.css.map",
+    "11.7b948271.chunk.js.map": "/React_lessons/static/js/11.7b948271.chunk.js.map",
+    "763.4b77dd98.chunk.css.map": "/React_lessons/static/css/763.4b77dd98.chunk.css.map",
+    "763.b195dced.chunk.js.map": "/React_lessons/static/js/763.b195dced.chunk.js.map",
     "478.3c92ad83.chunk.css.map": "/React_lessons/static/css/478.3c92ad83.chunk.css.map",
     "478.b79f4aba.chunk.js.map": "/React_lessons/static/js/478.b79f4aba.chunk.js.map",
     "634.a291468c.chunk.css.map": "/React_lessons/static/css/634.a291468c.chunk.css.map",
@@ -31,11 +31,11 @@
     "550.7eb92b1e.chunk.css.map": "/React_lessons/static/css/550.7eb92b1e.chunk.css.map",
     "550.5f8d4147.chunk.js.map": "/React_lessons/static/js/550.5f8d4147.chunk.js.map",
     "797.1819b218.chunk.css.map": "/React_lessons/static/css/797.1819b218.chunk.css.map",
-    "797.78ec5b53.chunk.js.map": "/React_lessons/static/js/797.78ec5b53.chunk.js.map",
+    "797.f9b9a869.chunk.js.map": "/React_lessons/static/js/797.f9b9a869.chunk.js.map",
     "615.2adaf889.chunk.js.map": "/React_lessons/static/js/615.2adaf889.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.164ed30c.css",
-    "static/js/main.5e45e030.js"
+    "static/css/main.1be76f0a.css",
+    "static/js/main.b1fe0c58.js"
   ]
 }
