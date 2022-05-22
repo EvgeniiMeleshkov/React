@@ -47,18 +47,22 @@ export const authThunkCreator = () =>
     }
 export const login = (email, password, rememberMe, captcha) =>
     async (dispatch) => {
+    try {
         let response = await authAPI.login(email, password, rememberMe, captcha);
         if (response.data.resultCode === 0) {
             // success, get auth data
             dispatch(authThunkCreator())
-        } else  {
-            if(response.data.resultCode === 10) {
+        } else {
+            if (response.data.resultCode === 10) {
                 dispatch(getCaptchaUrl())
             }
             let message = response.data.messages.length > 0
                 ? response.data.messages[0] : 'Common error'
             dispatch(stopSubmit('login', {_error: message}))
         }
+    } catch (error) {
+        debugger
+    }
     }
 
     export const getCaptchaUrl = () => async (dispatch) => {

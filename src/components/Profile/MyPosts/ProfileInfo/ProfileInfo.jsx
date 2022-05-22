@@ -28,7 +28,7 @@ const ProfileInfo = ({profile, savePhoto, updateStatus, status, isOwner, savePro
     return (
         <div>
             <div>
-
+                <img src={'https://www.codewars.com/users/EvgeniiMeleshkov/badges/large'}/>
             </div>
             <div className={s.descriptionBlock}>
                 <img src={profile.photos.large || userPhoto} className={s.mainPhoto}/>
